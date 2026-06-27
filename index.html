@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Ucil & Ainun</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Undangan Pernikahan Digital Ucil & Ainun. Nuansa putih bersih, elegan, dan estetik.">
+  <meta name="keywords" content="Undangan Digital, Pernikahan Ucil Ainun, Undangan Estetik, Undangan Mewah">
+  <meta name="author" content="Antigravity">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allison&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS CSS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- Background Music -->
+  <audio id="bg-music" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808b26d8b.mp3" type="audio/mp3">
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
+
+  <!-- Floating Music Toggle Button -->
+  <button id="music-toggle" class="music-btn hidden" aria-label="Mute/Unmute Musik">
+    <i class="fas fa-music"></i>
+  </button>
+
+  <!-- ==================== COVER 1 ==================== -->
+  <div id="cover-1" class="cover-screen">
+    <!-- Close-up Background Image (g11.jpg) -->
+    <div class="cover-bg" style="background-image: url('g11.jpg');"></div>
+    <div class="cover-overlay-top"></div>
+    
+    <div class="cover-content-top">
+      <h1 class="brittany-text animate-fade-in">Undangan</h1>
+    </div>
+    
+    <!-- White Transparent Blur Bottom Sheet -->
+    <div class="cover-bottom-sheet">
+      <div class="initials-container">
+        <h2 class="serif-text-initials">U & A</h2>
+      </div>
+      <div class="swipe-container">
+        <div class="swipe-track" id="swipe-track">
+          <div class="swipe-handle" id="swipe-handle">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <span class="swipe-text">Geser untuk membuka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== COVER 2 ==================== -->
+  <div id="cover-2" class="cover-screen hidden">
+    <!-- Background Slideshow (g12.jpg, g13.jpg, g14.jpg) without transparent overlay -->
+    <div class="cover-slideshow">
+      <div class="cover-slide active" style="background-image: url('g12.jpg');"></div>
+      <div class="cover-slide" style="background-image: url('g13.jpg');"></div>
+      <div class="cover-slide" style="background-image: url('g14.jpg');"></div>
+    </div>
+    
+    <div class="cover-content-full cover-2-content">
+      <div class="cover-2-top">
+        <span class="wedding-subtitle">THE WEDDING OF</span>
+        <h1 class="wedding-title-serif">Ucil & Ainun</h1>
+      </div>
+      
+      <div class="cover-2-bottom">
+        <span class="guest-to">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
+        <h3 id="guest-name" class="guest-name-text-simple">Tamu Undangan</h3>
+        
+        <button id="btn-open-invitation" class="btn-primary btn-small animate-pulse-gentle">
+          <i class="far fa-envelope-open"></i> Buka Undangan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main id="main-invitation" class="main-container hidden">
+
+    <!-- HERO SECTION (Elegant Transition Welcome Banner) -->
+    <section class="hero-section">
+      <div class="hero-bg" style="background-image: url('g12.jpg');"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+        <span class="hero-date">27 . 09 . 2026</span>
+        <h2 class="hero-names">Ucil & Ainun</h2>
+        <p class="hero-tagline">We Are Getting Married</p>
+        <a href="#profile" class="scroll-down-indicator">
+          <i class="fas fa-angle-double-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 1: QUOTES -->
+    <section class="section-padding quotes-section text-center">
+      <div class="container-small">
+        <div class="quotes-ornament" data-aos="fade-up">
+          <i class="fas fa-quote-left gold-icon"></i>
+        </div>
+        <p class="quotes-arabic" data-aos="fade-up" data-aos-delay="100">
+          وَمِنْ اٰيٰtِهٖٓ اَنْ خَلَقَ لَكُmْ مِّنْ اَنْفُسِكُmْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَهُmْ مَّوَدَّةً وَّرَحْمَةً ۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْmٍ يَّتَفَكَّرُوْنَ
+        </p>
+        <p class="quotes-translation" data-aos="fade-up" data-aos-delay="200">
+          "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."
+        </p>
+        <span class="quotes-author" data-aos="fade-up" data-aos-delay="300">QS. Ar-Rum: 21</span>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PROFIL MEMPELAI -->
+    <section class="section-padding profile-section bg-light" id="profile">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2 class="serif-title">Mempelai</h2>
+          <p class="section-subtitle">Assalamu’alaikum Warahmatullahi Wabarakatuh. Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami.</p>
+        </div>
+
+        <div class="row couple-row">
+          <!-- GROOM -->
+          <div class="col-couple" data-aos="fade-right" data-aos-duration="1200">
+            <div class="couple-card">
+              <div class="couple-img-wrapper">
+                <img src="groom.jpg" alt="Mempelai Pria" class="couple-img">
+              </div>
+              <div class="couple-details text-center">
+                <h3 class="couple-name">Ucil Pratama</h3>
+                <p class="couple-parents">Putra Pertama dari:</p>
+                <p class="parents-name">Bapak Junaidi & Ibu Sarah</p>
+                <a href="#" class="social-link" aria-label="Instagram Groom"><i class="fab fa-instagram"></i> @ucil_pratama</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- AMPERSAND DECORATION -->
+          <div class="col-ampersand text-center" data-aos="zoom-in" data-aos-delay="300">
+            <span class="ampersand">&</span>
+          </div>
+
+          <!-- BRIDE -->
+          <div class="col-couple" data-aos="fade-left" data-aos-duration="1200">
+            <div class="couple-card">
+              <div class="couple-img-wrapper">
+                <!-- Using g15.jpg as Bride Portrait -->
+                <img src="g15.jpg" alt="Mempelai Wanita" class="couple-img">
+              </div>
+              <div class="couple-details text-center">
+                <h3 class="couple-name">Ainun Lestari</h3>
+                <p class="couple-parents">Putri Kedua dari:</p>
+                <p class="parents-name">Bapak Hermawan & Ibu Aminah</p>
+                <a href="#" class="social-link" aria-label="Instagram Bride"><i class="fab fa-instagram"></i> @ainun_lestari</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DETAIL ACARA -->
+    <section class="section-padding event-section" id="event">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2 class="serif-title">Acara & Waktu</h2>
+          <div class="gold-divider-small"></div>
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown-container" data-aos="zoom-in" data-aos-duration="1000">
+          <h3 class="countdown-title">Menuju Hari Bahagia</h3>
+          <div class="countdown-grid" id="countdown-timer">
+            <div class="countdown-box">
+              <span class="number" id="days">00</span>
+              <span class="label">Hari</span>
+            </div>
+            <div class="countdown-box">
+              <span class="number" id="hours">00</span>
+              <span class="label">Jam</span>
+            </div>
+            <div class="countdown-box">
+              <span class="number" id="minutes">00</span>
+              <span class="label">Menit</span>
+            </div>
+            <div class="countdown-box">
+              <span class="number" id="seconds">00</span>
+              <span class="label">Detik</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row event-row">
+          <!-- AKAD NIKAH -->
+          <div class="col-event" data-aos="fade-up" data-aos-delay="100">
+            <div class="event-card">
+              <div class="event-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="event-title">Akad Nikah</h3>
+              <div class="event-line"></div>
+              
+              <div class="event-info-item">
+                <i class="far fa-calendar-alt"></i>
+                <span>Minggu, 27 September 2026</span>
+              </div>
+              
+              <div class="event-info-item">
+                <i class="far fa-clock"></i>
+                <span>08.00 - 10.00 WIB</span>
+              </div>
+              
+              <div class="event-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Masjid Agung Baiturrahman<br>Jl. Melati No. 45, Jakarta Pusat</span>
+              </div>
+              
+              <div class="event-buttons">
+                <a href="https://maps.app.goo.gl/u5K84XN7aQZ13B8v9" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                  <i class="fas fa-map-marked-alt"></i> Peta Google
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESEPSI PERNIKAHAN -->
+          <div class="col-event" data-aos="fade-up" data-aos-delay="200">
+            <div class="event-card featured">
+              <div class="event-icon">
+                <i class="fas fa-ring"></i>
+              </div>
+              <h3 class="event-title">Resepsi</h3>
+              <div class="event-line"></div>
+              
+              <div class="event-info-item">
+                <i class="far fa-calendar-alt"></i>
+                <span>Minggu, 27 September 2026</span>
+              </div>
+              
+              <div class="event-info-item">
+                <i class="far fa-clock"></i>
+                <span>11.00 - 16.00 WIB</span>
+              </div>
+              
+              <div class="event-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Grand Ballroom Elegant Mansion<br>Jl. Senopati Raya No. 12, Jakarta Selatan</span>
+              </div>
+              
+              <div class="event-buttons">
+                <a href="https://maps.app.goo.gl/u5K84XN7aQZ13B8v9" target="_blank" rel="noopener noreferrer" class="btn-primary-event">
+                  <i class="fas fa-map-marked-alt"></i> Peta Google
+                </a>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Ucil+%26+Ainun&dates=20260927T010000Z/20260927T090000Z&details=Selamat+datang+di+pernikahan+kami&location=Grand+Ballroom+Elegant+Mansion" target="_blank" class="btn-outline-event">
+                  <i class="far fa-calendar-plus"></i> Ingatkan Saya
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: GALERI FOTO ESTETIK -->
+    <section class="section-padding gallery-section bg-light" id="gallery">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2 class="serif-title">Galeri Bahagia</h2>
+          <p class="section-subtitle">Momen manis sebelum hari bahagia kami</p>
+        </div>
+
+        <!-- MASONRY GRID GALLERY -->
+        <div class="gallery-grid">
+          <!-- g1.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+            <img src="g1.jpg" alt="Foto Galeri 1" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g2.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="g2.jpg" alt="Foto Galeri 2" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g3.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+            <img src="g3.jpg" alt="Foto Galeri 3" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g4.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+            <img src="g4.jpg" alt="Foto Galeri 4" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g5.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="g5.jpg" alt="Foto Galeri 5" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g6.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+            <img src="g6.jpg" alt="Foto Galeri 6" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g7.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+            <img src="g7.jpg" alt="Foto Galeri 7" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g8.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="g8.jpg" alt="Foto Galeri 8" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g9.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+            <img src="g9.jpg" alt="Foto Galeri 9" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g10.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+            <img src="g10.jpg" alt="Foto Galeri 10" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g13.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="g13.jpg" alt="Foto Galeri 11" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <!-- g14.jpg -->
+          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+            <img src="g14.jpg" alt="Foto Galeri 12" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL FOR GALLERY -->
+    <div id="lightbox" class="lightbox-modal">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Lightbox Zoomed Photo">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- SECTION 5: WEDDING GIFT (DOMPET DIGITAL) -->
+    <section class="section-padding gift-section bg-white" id="gift">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2 class="serif-title">Kado Digital</h2>
+          <p class="section-subtitle">Doa restu Anda merupakan karunia terindah. Namun jika Anda ingin memberikan tanda kasih secara digital, Anda dapat mentransfer ke rekening di bawah ini.</p>
+        </div>
+
+        <div class="gift-row" data-aos="fade-up" data-aos-duration="1000">
+          <!-- CARD BCA -->
+          <div class="gift-card">
+            <div class="bank-logo-wrapper">
+              <span class="bank-name">BCA</span>
+            </div>
+            <p class="card-number" id="acc-bca">123-4567-890</p>
+            <p class="card-holder">a.n. Ucil Pratama</p>
+            <button class="btn-copy" onclick="copyAccountNumber('acc-bca', this)">
+              <i class="far fa-copy"></i> Salin Rekening
+            </button>
+          </div>
+
+          <!-- CARD MANDIRI -->
+          <div class="gift-card">
+            <div class="bank-logo-wrapper">
+              <span class="bank-name">MANDIRI</span>
+            </div>
+            <p class="card-number" id="acc-mandiri">987-6543-210</p>
+            <p class="card-holder">a.n. Ainun Lestari</p>
+            <button class="btn-copy" onclick="copyAccountNumber('acc-mandiri', this)">
+              <i class="far fa-copy"></i> Salin Rekening
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: RSVP & BUKU UCAPAN (GUESTBOOK) -->
+    <section class="section-padding guestbook-section bg-light" id="rsvp">
+      <div class="container-small">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2 class="serif-title">RSVP & Ucapan</h2>
+          <p class="section-subtitle">Mohon konfirmasi kehadiran Anda dan berikan ucapan serta doa restu terbaik untuk kami.</p>
+        </div>
+
+        <!-- RSVP Form Card -->
+        <div class="rsvp-card-form" data-aos="fade-up">
+          <form id="rsvp-form">
+            <div class="form-group">
+              <label for="input-name">Nama Lengkap</label>
+              <input type="text" id="input-name" required placeholder="Masukkan nama Anda">
+            </div>
+
+            <div class="form-group">
+              <label for="input-status">Konfirmasi Kehadiran</label>
+              <select id="input-status" required>
+                <option value="" disabled selected>Pilih status kehadiran</option>
+                <option value="Hadir">Saya akan Hadir</option>
+                <option value="Tidak Hadir">Maaf, tidak bisa hadir</option>
+                <option value="Masih Ragu">Masih ragu-ragu</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="input-message">Ucapan & Doa Restu</label>
+              <textarea id="input-message" rows="4" required placeholder="Tuliskan ucapan dan doa terbaik Anda..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-100">
+              <i class="far fa-paper-plane"></i> Kirim Ucapan
+            </button>
+          </form>
+        </div>
+
+        <!-- Wishes List Container -->
+        <div class="wishes-wrapper" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="wishes-title">Doa & Ucapan Tamu (<span id="wish-count">0</span>)</h3>
+          <div class="wishes-list" id="wishes-list-container">
+            <!-- Dynamic elements loaded via JS -->
+            <div class="wish-item empty-state text-center py-4">
+              <p class="text-muted">Belum ada ucapan. Jadilah yang pertama!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section bg-white text-center">
+      <div class="container-small">
+        <h2 class="brittany-text footer-brand">Ucil & Ainun</h2>
+        <p class="footer-thanks">Terima kasih atas doa restu Anda.</p>
+        
+        <div class="gold-divider-small my-4"></div>
+        
+        <p class="copyright">&copy; 2026 Ucil & Ainun. All Rights Reserved.</p>
+        <p class="created-by">Created with <i class="fas fa-heart text-danger"></i> for UCIL & AINUN</p>
+      </div>
+    </footer>
+
+  </main>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
