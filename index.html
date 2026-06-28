@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Pernikahan Ucil & Ainun</title>
+  <title>Undangan Pernikahan Yusril & Nur'Ainun</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Undangan Pernikahan Digital Ucil & Ainun. Nuansa putih bersih, elegan, dan estetik.">
-  <meta name="keywords" content="Undangan Digital, Pernikahan Ucil Ainun, Undangan Estetik, Undangan Mewah">
+  <meta name="description" content="Undangan Pernikahan Digital Yusril & Nur'Ainun. Nuansa putih bersih, elegan, dan estetik.">
+  <meta name="keywords" content="Undangan Digital, Pernikahan Yusril Nur'Ainun, Undangan Estetik, Undangan Mewah">
   <meta name="author" content="Antigravity">
   
   <!-- Google Fonts -->
@@ -27,17 +27,9 @@
 <body>
   <div class="app-container">
 
-    <!-- Screen Corner Ornaments -->
-    <div class="corner-ornaments-wrapper">
-      <img src="ornamen3.png" alt="Ornamen Kiri Atas" class="ornament ornament-tl">
-      <img src="ornamen4.png" alt="Ornamen Kanan Atas" class="ornament ornament-tr">
-      <img src="ornamen2.png" alt="Ornamen Kiri Bawah" class="ornament ornament-bl">
-      <img src="ornamen1.png" alt="Ornamen Kanan Bawah" class="ornament ornament-br">
-    </div>
-
     <!-- Background Music -->
   <audio id="bg-music" loop>
-    <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808b26d8b.mp3" type="audio/mp3">
+    <source src="musik.mp3" type="audio/mp3">
     Browser Anda tidak mendukung elemen audio.
   </audio>
 
@@ -101,14 +93,72 @@
   <!-- ==================== MAIN CONTENT ==================== -->
   <main id="main-invitation" class="main-container hidden">
 
-    <!-- HERO SECTION (Elegant Transition Welcome Banner) -->
+    <!-- Global Background Slideshow (g1 to g18) -->
+    <div class="global-slideshow">
+      <div class="global-slide active" style="background-image: url('g1.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g2.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g3.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g4.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g5.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g6.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g7.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g8.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g9.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g10.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g11.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g12.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g13.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g14.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g15.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g16.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g17.jpg');"></div>
+      <div class="global-slide" style="background-image: url('g18.jpg');"></div>
+    </div>
+    <div class="global-overlay"></div>
+
+    <!-- HERO SECTION (Elegant Transition Welcome Banner with 3D Frame) -->
     <section class="hero-section">
-      <div class="hero-bg" style="background-image: url('g12.jpg');"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
-        <span class="hero-date">27 . 09 . 2026</span>
-        <h2 class="hero-names">Ucil & Ainun</h2>
-        <p class="hero-tagline">We Are Getting Married</p>
+      
+      <div class="hero-content">
+        <!-- Top Block -->
+        <div class="hero-header">
+          <span class="hero-invited">You are invited to the wedding of</span>
+          <h2 class="hero-names">Yusril & Nur'Ainun</h2>
+        </div>
+        
+        <!-- Middle Block -->
+        <div class="hero-body">
+          <!-- 3D Oval/Circle Equilateral Frame for g17.jpg -->
+          <div class="hero-avatar-wrapper">
+            <img src="g17.jpg" alt="Ucil & Ainun Close Up" class="hero-avatar">
+          </div>
+        </div>
+        
+        <!-- Bottom Block -->
+        <div class="hero-footer">
+          <span class="hero-date-new">06 Juli 2026</span>
+          
+          <!-- Countdown Timer -->
+          <div class="hero-countdown" id="hero-countdown-timer">
+            <div class="hero-countdown-box">
+              <span class="number" id="hero-days">00</span>
+              <span class="label">Hari</span>
+            </div>
+            <div class="hero-countdown-box">
+              <span class="number" id="hero-hours">00</span>
+              <span class="label">Jam</span>
+            </div>
+            <div class="hero-countdown-box">
+              <span class="number" id="hero-minutes">00</span>
+              <span class="label">Menit</span>
+            </div>
+            <div class="hero-countdown-box">
+              <span class="number" id="hero-seconds">00</span>
+              <span class="label">Detik</span>
+            </div>
+          </div>
+        </div>
+        
         <a href="#profile" class="scroll-down-indicator">
           <i class="fas fa-angle-double-down"></i>
         </a>
@@ -118,60 +168,66 @@
     <!-- SECTION 1: QUOTES -->
     <section class="section-padding quotes-section text-center">
       <div class="container-small">
-        <div class="quotes-ornament" data-aos="fade-up">
-          <i class="fas fa-quote-left gold-icon"></i>
+        <!-- Elegant card wrapper with g15.jpg as background -->
+        <div class="quotes-card" data-aos="fade" data-aos-duration="1600">
+          <div class="quotes-card-bg" style="background-image: url('g15.jpg');"></div>
+          <div class="quotes-card-overlay"></div>
+          <div class="quotes-card-content">
+            <div class="quotes-ornament" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+              <i class="fas fa-quote-left gold-icon"></i>
+            </div>
+            <p class="quotes-arabic" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="350">
+              وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ Lَكُم مِّنْ اَنْفُسِكُmۡ اَزۡوَٰجًا لِّتَسۡكُنُوٓاْ اِلَیۡهَا وَجَعَلَ بَیۡنَكُم مَّوَدَّةً وَرَحْمَةًۚ اِنَّ فِي ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
+            </p>
+            <p class="quotes-translation" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+              "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."
+            </p>
+            <span class="quotes-author" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="650">QS. Ar-Rum: 21</span>
+          </div>
         </div>
-        <p class="quotes-arabic" data-aos="fade-up" data-aos-delay="100">
-          وَمِنْ اٰيٰtِهٖٓ اَنْ خَلَقَ لَكُmْ مِّنْ اَنْفُسِكُmْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَهُmْ مَّوَدَّةً وَّرَحْمَةً ۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْmٍ يَّتَفَكَّرُوْنَ
-        </p>
-        <p class="quotes-translation" data-aos="fade-up" data-aos-delay="200">
-          "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."
-        </p>
-        <span class="quotes-author" data-aos="fade-up" data-aos-delay="300">QS. Ar-Rum: 21</span>
       </div>
     </section>
 
     <!-- SECTION 2: PROFIL MEMPELAI -->
     <section class="section-padding profile-section bg-light" id="profile">
       <div class="container">
-        <div class="section-header text-center" data-aos="fade-up">
-          <h2 class="serif-title">Mempelai</h2>
-          <p class="section-subtitle">Assalamu’alaikum Warahmatullahi Wabarakatuh. Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami.</p>
+        <div class="section-header text-center">
+          <h2 class="serif-title" data-aos="fade-up" data-aos-duration="1200">Mempelai</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">Assalamu’alaikum Warahmatullahi Wabarakatuh. Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami.</p>
         </div>
 
         <div class="row couple-row">
           <!-- GROOM -->
-          <div class="col-couple" data-aos="fade-right" data-aos-duration="1200">
+          <div class="col-couple" data-aos="zoom-in-up" data-aos-duration="1400" data-aos-delay="500">
             <div class="couple-card">
               <div class="couple-img-wrapper">
                 <img src="groom.jpg" alt="Mempelai Pria" class="couple-img">
               </div>
               <div class="couple-details text-center">
-                <h3 class="couple-name">Ucil Pratama</h3>
-                <p class="couple-parents">Putra Pertama dari:</p>
-                <p class="parents-name">Bapak Junaidi & Ibu Sarah</p>
-                <a href="#" class="social-link" aria-label="Instagram Groom"><i class="fab fa-instagram"></i> @ucil_pratama</a>
+                <h3 class="couple-name">Yusril Abd. Jalil, S.I.Kom</h3>
+                <p class="couple-parents">Anak Pertama dari:</p>
+                <p class="parents-name">Bapak Abd. Jalil Kaco (Almarhum) & Ibu Ais</p>
+                <a href="#" class="social-link" aria-label="Instagram Groom"><i class="fab fa-instagram"></i> @yusril_aj</a>
               </div>
             </div>
           </div>
 
           <!-- AMPERSAND DECORATION -->
-          <div class="col-ampersand text-center" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-ampersand text-center" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="700">
             <span class="ampersand">&</span>
           </div>
 
           <!-- BRIDE -->
-          <div class="col-couple" data-aos="fade-left" data-aos-duration="1200">
+          <div class="col-couple" data-aos="zoom-in-up" data-aos-duration="1400" data-aos-delay="900">
             <div class="couple-card">
               <div class="couple-img-wrapper">
-                <!-- Using g15.jpg as Bride Portrait -->
-                <img src="g15.jpg" alt="Mempelai Wanita" class="couple-img">
+                <img src="bride.jpg" alt="Mempelai Wanita" class="couple-img">
               </div>
               <div class="couple-details text-center">
-                <h3 class="couple-name">Ainun Lestari</h3>
-                <p class="couple-parents">Putri Kedua dari:</p>
-                <p class="parents-name">Bapak Hermawan & Ibu Aminah</p>
-                <a href="#" class="social-link" aria-label="Instagram Bride"><i class="fab fa-instagram"></i> @ainun_lestari</a>
+                <h3 class="couple-name">Nur'Ainun</h3>
+                <p class="couple-parents">Anak Kedua dari:</p>
+                <p class="parents-name">Bapak Muhtar Idrus & Ibu Masni</p>
+                <a href="#" class="social-link" aria-label="Instagram Bride"><i class="fab fa-instagram"></i> @nur_ainun</a>
               </div>
             </div>
           </div>
@@ -182,13 +238,13 @@
     <!-- SECTION 3: DETAIL ACARA -->
     <section class="section-padding event-section" id="event">
       <div class="container">
-        <div class="section-header text-center" data-aos="fade-up">
-          <h2 class="serif-title">Acara & Waktu</h2>
-          <div class="gold-divider-small"></div>
+        <div class="section-header text-center">
+          <h2 class="serif-title" data-aos="fade-up" data-aos-duration="1200">Acara & Waktu</h2>
+          <div class="gold-divider-small" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150"></div>
         </div>
 
         <!-- COUNTDOWN -->
-        <div class="countdown-container" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="countdown-container" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="100">
           <h3 class="countdown-title">Menuju Hari Bahagia</h3>
           <div class="countdown-grid" id="countdown-timer">
             <div class="countdown-box">
@@ -210,70 +266,115 @@
           </div>
         </div>
 
-        <div class="row event-row">
-          <!-- AKAD NIKAH -->
-          <div class="col-event" data-aos="fade-up" data-aos-delay="100">
-            <div class="event-card">
-              <div class="event-icon">
-                <i class="fas fa-heart"></i>
-              </div>
-              <h3 class="event-title">Akad Nikah</h3>
-              <div class="event-line"></div>
+        <!-- DOUBLE CARD LAYOUT (WHITE VERSION LIKE REFERENCE) -->
+        <div class="double-card-container">
+          <!-- Left Card: Main Event Details -->
+          <div class="event-main-card" data-aos="fade-right" data-aos-duration="1600" data-aos-delay="300">
+            <!-- Arch/Dome Photo using g2.jpg -->
+            <div class="arch-photo-wrapper">
+              <img src="g2.jpg" alt="Yusril & Nur'Ainun" class="arch-photo">
+            </div>
+            
+            <!-- Event Details (No Bride/Groom Names) -->
+            <div class="event-main-details">
+              <span class="event-card-tag">RESEPSI</span>
+              <h4 class="event-card-title">Resepsi Pernikahan</h4>
               
-              <div class="event-info-item">
-                <i class="far fa-calendar-alt"></i>
-                <span>Minggu, 27 September 2026</span>
+              <div class="event-card-info">
+                <div class="info-row">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>Senin, 06 Juli 2026</span>
+                </div>
+                <div class="info-row">
+                  <i class="far fa-clock"></i>
+                  <span>19.30 WITA - Selesai</span>
+                </div>
+                <div class="info-row">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span class="address-text">Dusun 4 Pasar Tua, Desa Ogotua</span>
+                </div>
               </div>
               
-              <div class="event-info-item">
-                <i class="far fa-clock"></i>
-                <span>08.00 - 10.00 WIB</span>
-              </div>
-              
-              <div class="event-info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Masjid Agung Baiturrahman<br>Jl. Melati No. 45, Jakarta Pusat</span>
-              </div>
-              
-              <div class="event-buttons">
-                <a href="https://maps.app.goo.gl/u5K84XN7aQZ13B8v9" target="_blank" rel="noopener noreferrer" class="btn-outline">
-                  <i class="fas fa-map-marked-alt"></i> Peta Google
-                </a>
-              </div>
+              <!-- Google Maps Button -->
+              <a href="https://maps.app.goo.gl/u5K84XN7aQZ13B8v9" target="_blank" rel="noopener noreferrer" class="btn-card-maps">
+                <i class="fas fa-map-marked-alt"></i> Google Maps
+              </a>
             </div>
           </div>
 
-          <!-- RESEPSI PERNIKAHAN -->
-          <div class="col-event" data-aos="fade-up" data-aos-delay="200">
-            <div class="event-card featured">
-              <div class="event-icon">
-                <i class="fas fa-ring"></i>
+          <!-- Right Card: Save The Date Bookmark -->
+          <div class="event-side-card" data-aos="fade-left" data-aos-duration="1600" data-aos-delay="500">
+            <div class="side-card-header">
+              <span class="save-date-text">SAVE</span>
+              <span class="save-date-text-small">the</span>
+              <span class="save-date-text">DATE</span>
+            </div>
+            
+            <div class="side-card-divider"></div>
+            
+            <div class="side-card-date-box">
+              <span class="side-date-num">06</span>
+              <span class="side-date-month">Juli</span>
+              <span class="side-date-year">2026</span>
+            </div>
+            
+            <!-- Close-up Couple Photo (g16.jpg) -->
+            <div class="side-card-photo-wrapper">
+              <img src="g16.jpg" alt="Yusril & Nur'Ainun" class="side-card-photo">
+            </div>
+            
+            <!-- Vertical Slot Badge containing "Senin" in cursive -->
+            <div class="side-card-slot-wrapper">
+              <div class="side-card-slot-white">
+                <span class="slot-text-cursive">Senin</span>
               </div>
-              <h3 class="event-title">Resepsi</h3>
-              <div class="event-line"></div>
-              
-              <div class="event-info-item">
-                <i class="far fa-calendar-alt"></i>
-                <span>Minggu, 27 September 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LOVE STORY -->
+    <section class="section-padding story-section bg-white" id="story">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="serif-title" data-aos="fade-up" data-aos-duration="1200">Our Love Story</h2>
+          <div class="gold-divider-small" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150"></div>
+        </div>
+
+        <!-- SINGLE DOUBLE-ARCH CARD (Kubah Atas & Bawah) -->
+        <div class="story-card-container" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="300">
+          <div class="story-double-arch-card">
+            <!-- Background Image -->
+            <div class="story-card-bg" style="background-image: url('g5.jpg');"></div>
+            <!-- Soft White Overlay for readability -->
+            <div class="story-card-overlay"></div>
+            
+            <!-- Content inside the card -->
+            <div class="story-card-content">
+              <!-- Chapter 1 -->
+              <div class="story-chapter" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                <span class="story-chapter-num">I</span>
+                <h3 class="story-chapter-title">Awal Segalanya</h3>
+                <p class="story-chapter-text">Mari kita mundur 7 tahun ke belakang, Pertemuan pertama yang sederhana di Kos menjadi awal dari segalanya. Siapa sangka, perkenalan singkat itu menumbuhkan rasa nyaman yang tak biasa.</p>
               </div>
-              
-              <div class="event-info-item">
-                <i class="far fa-clock"></i>
-                <span>11.00 - 16.00 WIB</span>
+
+              <div class="story-chapter-divider"></div>
+
+              <!-- Chapter 2 -->
+              <div class="story-chapter" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                <span class="story-chapter-num">II</span>
+                <h3 class="story-chapter-title">Perjalanan & Komitmen</h3>
+                <p class="story-chapter-text">Tujuh tahun bukanlah waktu yang singkat. Selama 3 tahun kita menjalani hubungan sempat Berakhir karena keegoisan masing masing hingga kembali lagi diuji dengan rindu, tahun 2023 kita mantap untuk berkomitmen lebih serius. Setiap proses, tawa, dan air mata telah mendewasakan kita berdua.</p>
               </div>
-              
-              <div class="event-info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Grand Ballroom Elegant Mansion<br>Jl. Senopati Raya No. 12, Jakarta Selatan</span>
-              </div>
-              
-              <div class="event-buttons">
-                <a href="https://maps.app.goo.gl/u5K84XN7aQZ13B8v9" target="_blank" rel="noopener noreferrer" class="btn-primary-event">
-                  <i class="fas fa-map-marked-alt"></i> Peta Google
-                </a>
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Ucil+%26+Ainun&dates=20260927T010000Z/20260927T090000Z&details=Selamat+datang+di+pernikahan+kami&location=Grand+Ballroom+Elegant+Mansion" target="_blank" class="btn-outline-event">
-                  <i class="far fa-calendar-plus"></i> Ingatkan Saya
-                </a>
+
+              <div class="story-chapter-divider"></div>
+
+              <!-- Chapter 3 -->
+              <div class="story-chapter" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+                <span class="story-chapter-num">III</span>
+                <h3 class="story-chapter-title">Menuju Pelaminan</h3>
+                <p class="story-chapter-text">Kini, setelah melewati 7 tahun penuh perjuangan dan kesabaran, penantian panjang itu berujung di pelaminan. Terima kasih telah menjadi partner hidup.</p>
               </div>
             </div>
           </div>
@@ -284,93 +385,133 @@
     <!-- SECTION 4: GALERI FOTO ESTETIK -->
     <section class="section-padding gallery-section bg-light" id="gallery">
       <div class="container">
-        <div class="section-header text-center" data-aos="fade-up">
-          <h2 class="serif-title">Galeri Bahagia</h2>
-          <p class="section-subtitle">Momen manis sebelum hari bahagia kami</p>
+        <div class="section-header text-center">
+          <h2 class="serif-title" data-aos="fade-up" data-aos-duration="1200">Galeri Bahagia</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="150">Momen manis sebelum hari bahagia kami</p>
         </div>
 
-        <!-- MASONRY GRID GALLERY -->
+        <!-- INFINITE RUNNING PHOTO MARQUEE (Foto Berjalan) -->
+        <div class="gallery-marquee-container" data-aos="fade-up" data-aos-duration="1200">
+          <div class="gallery-marquee-track">
+            <!-- Set of Images -->
+            <div class="marquee-slide"><img src="g6.jpg" alt="Running Photo 1"></div>
+            <div class="marquee-slide"><img src="g7.jpg" alt="Running Photo 2"></div>
+            <div class="marquee-slide"><img src="g8.jpg" alt="Running Photo 3"></div>
+            <div class="marquee-slide"><img src="g9.jpg" alt="Running Photo 4"></div>
+            <div class="marquee-slide"><img src="g10.jpg" alt="Running Photo 5"></div>
+            <div class="marquee-slide"><img src="g15.jpg" alt="Running Photo 6"></div>
+            
+            <!-- Duplicated Set for Seamless Loop -->
+            <div class="marquee-slide"><img src="g6.jpg" alt="Running Photo 1"></div>
+            <div class="marquee-slide"><img src="g7.jpg" alt="Running Photo 2"></div>
+            <div class="marquee-slide"><img src="g8.jpg" alt="Running Photo 3"></div>
+            <div class="marquee-slide"><img src="g9.jpg" alt="Running Photo 4"></div>
+            <div class="marquee-slide"><img src="g10.jpg" alt="Running Photo 5"></div>
+            <div class="marquee-slide"><img src="g15.jpg" alt="Running Photo 6"></div>
+          </div>
+        </div>
+
+        <!-- ASYMMETRICAL AESTHETIC GRID GALLERY -->
         <div class="gallery-grid">
-          <!-- g1.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+          <!-- g1.jpg (Tall on Desktop) -->
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
             <img src="g1.jpg" alt="Foto Galeri 1" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
-          <!-- g2.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          
+          <!-- g2.jpg (Wide on Desktop) -->
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
             <img src="g2.jpg" alt="Foto Galeri 2" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
+          
           <!-- g3.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
             <img src="g3.jpg" alt="Foto Galeri 3" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
+          
           <!-- g4.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
             <img src="g4.jpg" alt="Foto Galeri 4" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
-          <!-- g5.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          
+          <!-- g5.jpg (Tall on Desktop) -->
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
             <img src="g5.jpg" alt="Foto Galeri 5" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
+          
           <!-- g6.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
             <img src="g6.jpg" alt="Foto Galeri 6" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
+          
           <!-- g7.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
             <img src="g7.jpg" alt="Foto Galeri 7" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
-          <!-- g8.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          
+          <!-- g8.jpg (Wide on Desktop) -->
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
             <img src="g8.jpg" alt="Foto Galeri 8" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
+          
           <!-- g9.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
             <img src="g9.jpg" alt="Foto Galeri 9" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
+          
           <!-- g10.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
             <img src="g10.jpg" alt="Foto Galeri 10" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
-          <!-- g13.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          
+          <!-- g13.jpg (Tall on Desktop) -->
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
             <img src="g13.jpg" alt="Foto Galeri 11" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
           </div>
+          
           <!-- g14.jpg -->
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
             <img src="g14.jpg" alt="Foto Galeri 12" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          
+          <!-- g15.jpg -->
+          <div class="gallery-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+            <img src="g15.jpg" alt="Foto Galeri 13" class="gallery-img">
             <div class="gallery-overlay">
               <i class="fas fa-search-plus"></i>
             </div>
@@ -389,33 +530,33 @@
     <!-- SECTION 5: WEDDING GIFT (DOMPET DIGITAL) -->
     <section class="section-padding gift-section bg-white" id="gift">
       <div class="container">
-        <div class="section-header text-center" data-aos="fade-up">
-          <h2 class="serif-title">Kado Digital</h2>
-          <p class="section-subtitle">Doa restu Anda merupakan karunia terindah. Namun jika Anda ingin memberikan tanda kasih secara digital, Anda dapat mentransfer ke rekening di bawah ini.</p>
+        <div class="section-header text-center">
+          <h2 class="serif-title" data-aos="fade-up" data-aos-duration="1200">Kado Digital</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="150">Doa restu Anda merupakan karunia terindah. Namun jika Anda ingin memberikan tanda kasih secara digital, Anda dapat mentransfer ke rekening di bawah ini.</p>
         </div>
 
-        <div class="gift-row" data-aos="fade-up" data-aos-duration="1000">
-          <!-- CARD BCA -->
-          <div class="gift-card">
+        <div class="gift-row">
+          <!-- CARD BRI -->
+          <div class="gift-card" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="100">
             <div class="bank-logo-wrapper">
-              <span class="bank-name">BCA</span>
+              <span class="bank-name">BRI</span>
             </div>
-            <p class="card-number" id="acc-bca">123-4567-890</p>
-            <p class="card-holder">a.n. Ucil Pratama</p>
-            <button class="btn-copy" onclick="copyAccountNumber('acc-bca', this)">
+            <p class="card-number" id="acc-bri">129101009419531</p>
+            <p class="card-holder">a.n. Yusril Abd. Jalil</p>
+            <button class="btn-copy" onclick="copyAccountNumber('acc-bri', this)">
               <i class="far fa-copy"></i> Salin Rekening
             </button>
           </div>
 
-          <!-- CARD MANDIRI -->
-          <div class="gift-card">
+          <!-- CARD DANA -->
+          <div class="gift-card" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="250">
             <div class="bank-logo-wrapper">
-              <span class="bank-name">MANDIRI</span>
+              <span class="bank-name">DANA</span>
             </div>
-            <p class="card-number" id="acc-mandiri">987-6543-210</p>
-            <p class="card-holder">a.n. Ainun Lestari</p>
-            <button class="btn-copy" onclick="copyAccountNumber('acc-mandiri', this)">
-              <i class="far fa-copy"></i> Salin Rekening
+            <p class="card-number" id="acc-dana">082349743381</p>
+            <p class="card-holder">a.n. Yusril Abd. Jalil</p>
+            <button class="btn-copy" onclick="copyAccountNumber('acc-dana', this)">
+              <i class="far fa-copy"></i> Salin Nomor
             </button>
           </div>
         </div>
@@ -425,13 +566,13 @@
     <!-- SECTION 6: RSVP & BUKU UCAPAN (GUESTBOOK) -->
     <section class="section-padding guestbook-section bg-light" id="rsvp">
       <div class="container-small">
-        <div class="section-header text-center" data-aos="fade-up">
-          <h2 class="serif-title">RSVP & Ucapan</h2>
-          <p class="section-subtitle">Mohon konfirmasi kehadiran Anda dan berikan ucapan serta doa restu terbaik untuk kami.</p>
+        <div class="section-header text-center">
+          <h2 class="serif-title" data-aos="fade-up" data-aos-duration="1200">RSVP & Ucapan</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="150">Mohon konfirmasi kehadiran Anda dan berikan ucapan serta doa restu terbaik untuk kami.</p>
         </div>
 
         <!-- RSVP Form Card -->
-        <div class="rsvp-card-form" data-aos="fade-up">
+        <div class="rsvp-card-form" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="100">
           <form id="rsvp-form">
             <div class="form-group">
               <label for="input-name">Nama Lengkap</label>
@@ -460,7 +601,7 @@
         </div>
 
         <!-- Wishes List Container -->
-        <div class="wishes-wrapper" data-aos="fade-up" data-aos-delay="200">
+        <div class="wishes-wrapper" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="250">
           <h3 class="wishes-title">Doa & Ucapan Tamu (<span id="wish-count">0</span>)</h3>
           <div class="wishes-list" id="wishes-list-container">
             <!-- Dynamic elements loaded via JS -->
@@ -475,13 +616,19 @@
     <!-- FOOTER -->
     <footer class="footer-section bg-white text-center">
       <div class="container-small">
-        <h2 class="brittany-text footer-brand">Ucil & Ainun</h2>
+        <h2 class="brittany-text footer-brand">Yusril & Nur'Ainun</h2>
         <p class="footer-thanks">Terima kasih atas doa restu Anda.</p>
         
         <div class="gold-divider-small my-4"></div>
         
-        <p class="copyright">&copy; 2026 Ucil & Ainun. All Rights Reserved.</p>
-        <p class="created-by">Created with <i class="fas fa-heart text-danger"></i> for UCIL & AINUN</p>
+        <p class="developer-info">
+          Pengembang Undangan Digital: <strong>wardigital</strong>
+        </p>
+        <p class="developer-contacts">
+          <a href="https://instagram.com/war.digital_" target="_blank" rel="noopener noreferrer" class="dev-link"><i class="fab fa-instagram"></i> war.digital_</a>
+          <span class="mx-2">|</span>
+          <a href="https://wa.me/6281325288213" target="_blank" rel="noopener noreferrer" class="dev-link"><i class="fab fa-whatsapp"></i> 0813-2528-8213</a>
+        </p>
       </div>
     </footer>
 

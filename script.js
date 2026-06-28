@@ -1,11 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize AOS (Animate On Scroll)
-  AOS.init({
-    duration: 1000,
-    once: true,
-    mirror: false
-  });
-
   // ==========================================================================
   // GUEST NAME DETECTION FROM URL
   // ==========================================================================
@@ -93,6 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     cover1.classList.add('slide-up-exit');
     cover2.classList.remove('hidden');
     
+    // Putar musik saat selesai menggeser tombol geser
+    playMusic();
+    
     // Remove Cover 1 from DOM after animation completed
     setTimeout(() => {
       cover1.style.display = 'none';
@@ -115,6 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
+  // GLOBAL BACKGROUND SLIDESHOW LOGIC (g1 - g18)
+  // ==========================================================================
+  const globalSlides = document.querySelectorAll('.global-slide');
+  let currentGlobalSlide = 0;
+  const globalSlideInterval = 5000; // Ganti slide setiap 5 detik
+
+  if (globalSlides.length > 0) {
+    setInterval(() => {
+      globalSlides[currentGlobalSlide].classList.remove('active');
+      currentGlobalSlide = (currentGlobalSlide + 1) % globalSlides.length;
+      globalSlides[currentGlobalSlide].classList.add('active');
+    }, globalSlideInterval);
+  }
+
+  // ==========================================================================
   // COVER 2: OPEN INVITATION & MUSIC AUTOPLAY LOGIC
   // ==========================================================================
   const btnOpen = document.getElementById('btn-open-invitation');
@@ -131,13 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 3. Reveal Main content
     mainInvitation.classList.remove('hidden');
+    mainInvitation.classList.add('active-invitation'); // Trigger CSS entrance animations
     musicToggle.classList.remove('hidden');
     
-    // Trigger AOS refresh because elements are now visible
+    // Initialize AOS after the elements are rendered and visible in the DOM
     setTimeout(() => {
+      AOS.init({
+        duration: 1400,
+        once: false, // Animasi akan terus terpicu berulang kali
+        mirror: true, // Animasi akan berputar balik saat di-scroll ke atas maupun ke bawah
+        easing: 'ease-out-cubic'
+      });
       cover2.style.display = 'none';
-      AOS.refresh();
-    }, 1000);
+    }, 400); // 400ms is the sweet spot: elements are visible, and it initializes before the cover transition ends
   });
 
   // Music Playback functions
@@ -170,20 +187,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // EVENT COUNTDOWN TIMER
   // ==========================================================================
-  // Set wedding date: September 27, 2026 08:00:00 (Jakarta Time/WIB, UTC+7)
-  // Converting local date string to timestamp
-  const weddingDate = new Date('2026-09-27T08:00:00+07:00').getTime();
+  // Set wedding date: July 6, 2026 08:00:00 (Jakarta Time/WIB, UTC+7)
+  const weddingDate = new Date('2026-07-06T08:00:00+07:00').getTime();
 
   const timerInterval = setInterval(() => {
     const now = new Date().getTime();
     const distance = weddingDate - now;
 
+    const zeroTime = '00';
     if (distance < 0) {
       clearInterval(timerInterval);
-      document.getElementById('days').textContent = '00';
-      document.getElementById('hours').textContent = '00';
-      document.getElementById('minutes').textContent = '00';
-      document.getElementById('seconds').textContent = '00';
+      // Update event countdown
+      document.getElementById('days').textContent = zeroTime;
+      document.getElementById('hours').textContent = zeroTime;
+      document.getElementById('minutes').textContent = zeroTime;
+      document.getElementById('seconds').textContent = zeroTime;
+      
+      // Update hero countdown
+      const heroDays = document.getElementById('hero-days');
+      if (heroDays) {
+        heroDays.textContent = zeroTime;
+        document.getElementById('hero-hours').textContent = zeroTime;
+        document.getElementById('hero-minutes').textContent = zeroTime;
+        document.getElementById('hero-seconds').textContent = zeroTime;
+      }
       
       const countdownTitle = document.querySelector('.countdown-title');
       if (countdownTitle) countdownTitle.textContent = 'Acara Sedang Berlangsung / Telah Selesai';
@@ -195,10 +222,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    const dStr = String(days).padStart(2, '0');
+    const hStr = String(hours).padStart(2, '0');
+    const mStr = String(minutes).padStart(2, '0');
+    const sStr = String(seconds).padStart(2, '0');
+
+    // Update event countdown
+    document.getElementById('days').textContent = dStr;
+    document.getElementById('hours').textContent = hStr;
+    document.getElementById('minutes').textContent = mStr;
+    document.getElementById('seconds').textContent = sStr;
+
+    // Update hero countdown
+    const heroDays = document.getElementById('hero-days');
+    if (heroDays) {
+      heroDays.textContent = dStr;
+      document.getElementById('hero-hours').textContent = hStr;
+      document.getElementById('hero-minutes').textContent = mStr;
+      document.getElementById('hero-seconds').textContent = sStr;
+    }
   }, 1000);
 
   // ==========================================================================
