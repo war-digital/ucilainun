@@ -234,14 +234,7 @@ a {
 
 /* Cover 1 Specific Overlays */
 .cover-overlay-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
-  z-index: 2;
-  pointer-events: none;
+  display: none; /* Removed top overlay to keep the image clean */
 }
 
 .cover-content-top {
@@ -256,22 +249,22 @@ a {
   position: relative;
   z-index: 3;
   width: 100%;
-  /* Soft transparent cloud gradient at the bottom */
+  /* Soft transparent cloud gradient at the bottom - kabut putih transparan */
   background: linear-gradient(to top, 
-    rgba(255, 255, 255, 1) 0%, 
-    rgba(255, 255, 255, 0.98) 35%, 
-    rgba(255, 255, 255, 0.85) 60%, 
-    rgba(255, 255, 255, 0.4) 80%, 
+    rgba(255, 255, 255, 0.6) 0%, 
+    rgba(255, 255, 255, 0.4) 35%, 
+    rgba(255, 255, 255, 0.2) 60%, 
+    rgba(255, 255, 255, 0.05) 80%, 
     rgba(255, 255, 255, 0) 100%
   );
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 24px 60px 24px; /* Generous padding-top for soft cloud blend */
+  padding: 80px 24px 60px 24px; /* Slightly reduced padding-top for soft cloud blend */
 }
 
-/* Fluffy cloud bubble overlay */
+/* Fluffy cloud bubble overlay - soft transparent fog */
 .cover-bottom-sheet::before {
   content: "";
   position: absolute;
@@ -279,8 +272,8 @@ a {
   left: -10%;
   width: 120%;
   height: 70px;
-  background: rgba(255, 255, 255, 0.7);
-  filter: blur(28px);
+  background: rgba(255, 255, 255, 0.25); /* Soft transparent fog */
+  filter: blur(30px);
   border-radius: 50% 50% 0 0;
   z-index: -1;
 }
@@ -1533,7 +1526,7 @@ a {
   height: 100vh;
   height: 100dvh;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 998; /* Placed behind Cover 1 and Cover 2 (z-index 999) to keep them clean */
   overflow: hidden;
 }
 
@@ -1550,7 +1543,7 @@ a {
   height: auto;
   pointer-events: none;
   opacity: 0;
-  z-index: 1000;
+  z-index: 998;
 }
 
 /* Positions & entrance animations */
