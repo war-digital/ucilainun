@@ -256,8 +256,6 @@ a {
     rgba(255, 255, 255, 0.15) 75%, 
     rgba(255, 255, 255, 0) 100%
   );
-  backdrop-filter: blur(4px); /* Depth blur effect for premium fog look */
-  -webkit-backdrop-filter: blur(4px);
   display: flex;
   flex-direction: column;
   align-items: center;
