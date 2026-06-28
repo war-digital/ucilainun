@@ -1520,3 +1520,134 @@ a {
       right: calc(50% - 215px); /* 480px / 2 = 240px, offset by 25px margin */
     }
   }
+
+/* ==========================================================================
+   SCREEN CORNER ORNAMENTS
+   ========================================================================== */
+.corner-ornaments-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  height: 100dvh;
+  pointer-events: none;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+@media (min-width: 481px) {
+  .corner-ornaments-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.ornament {
+  position: absolute;
+  width: 120px; /* Enlarged aesthetic corner sizing */
+  height: auto;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
+}
+
+/* Positions & entrance animations */
+.ornament-tl {
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  animation: slideInTL 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards,
+             ornamentFloatTL 6s ease-in-out infinite alternate 2.3s;
+}
+
+.ornament-tr {
+  top: 0;
+  right: 0;
+  transform-origin: top right;
+  animation: slideInTR 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards,
+             ornamentFloatTR 6s ease-in-out infinite alternate 2.3s;
+}
+
+.ornament-bl {
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom left;
+  animation: slideInBL 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards,
+             ornamentFloatBL 6s ease-in-out infinite alternate 2.3s;
+}
+
+.ornament-br {
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+  animation: slideInBR 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards,
+             ornamentFloatBR 6s ease-in-out infinite alternate 2.3s;
+}
+
+/* Entrance animations (diagonals slide in + rotation) */
+@keyframes slideInTL {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, -30px) rotate(-12deg);
+  }
+  100% {
+    opacity: 0.85;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes slideInTR {
+  0% {
+    opacity: 0;
+    transform: translate(30px, -30px) rotate(12deg);
+  }
+  100% {
+    opacity: 0.85;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes slideInBL {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, 30px) rotate(12deg);
+  }
+  100% {
+    opacity: 0.85;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes slideInBR {
+  0% {
+    opacity: 0;
+    transform: translate(30px, 30px) rotate(-12deg);
+  }
+  100% {
+    opacity: 0.85;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* Subtle floating/breathing organic effects */
+@keyframes ornamentFloatTL {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  100% { transform: translate(2px, 2px) scale(1.03) rotate(0.8deg); }
+}
+
+@keyframes ornamentFloatTR {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  100% { transform: translate(-2px, 2px) scale(1.03) rotate(-0.8deg); }
+}
+
+@keyframes ornamentFloatBL {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  100% { transform: translate(2px, -2px) scale(1.03) rotate(-0.8deg); }
+}
+
+@keyframes ornamentFloatBR {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  100% { transform: translate(-2px, -2px) scale(1.03) rotate(0.8deg); }
+}
