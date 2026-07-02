@@ -282,13 +282,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // RSVP & WISHES GUESTBOOK (LOCAL STORAGE)
+  // RSVP & WISHES GUESTBOOK (GOOGLE SHEETS INTEGRATION)
   // ==========================================================================
+  // MASUKKAN URL DEPLOYMENT GOOGLE APPS SCRIPT WEB APP ANDA DI SINI:
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLeaIys4hMYt5ydmC6Cep-qM36l2ZhJji3RbSqbd63e0jjDwA9yfbS3spHd8myaBpe/exec';
   const rsvpForm = document.getElementById('rsvp-form');
   const wishesListContainer = document.getElementById('wishes-list-container');
   const wishCountSpan = document.getElementById('wish-count');
 
-  // Pre-load default aesthetic wishes if LocalStorage is empty
+  // Pre-load default aesthetic wishes if database is empty or connection fails
   const defaultWishes = [
     {
       name: "Rian & Keluarga",
@@ -310,21 +312,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  function getWishes() {
-    const stored = localStorage.getItem('ucil_ainun_wishes');
-    if (!stored) {
-      localStorage.setItem('ucil_ainun_wishes', JSON.stringify(defaultWishes));
-      return defaultWishes;
+  // Fetch all wishes
+  async function getWishes() {
+    if (!SCRIPT_URL) {
+      // Fallback ke LocalStorage jika URL belum diisi
+      const stored = localStorage.getItem('ucil_ainun_wishes');
+      if (!stored) {
+        localStorage.setItem('ucil_ainun_wishes', JSON.stringify(defaultWishes));
+        return defaultWishes;
+      }
+      return JSON.parse(stored);
     }
-    return JSON.parse(stored);
+
+    try {
+      const response = await fetch(SCRIPT_URL);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      return data.length > 0 ? data : defaultWishes;
+    } catch (error) {
+      console.error('Gagal mengambil data dari Google Sheets, menggunakan fallback:', error);
+      const stored = localStorage.getItem('ucil_ainun_wishes');
+      return stored ? JSON.parse(stored) : defaultWishes;
+    }
   }
 
-  function saveWishes(wishes) {
-    localStorage.setItem('ucil_ainun_wishes', JSON.stringify(wishes));
+  // Save a new wish
+  async function saveWish(newWish) {
+    if (!SCRIPT_URL) {
+      // Fallback ke LocalStorage jika URL belum diisi
+      const wishes = JSON.parse(localStorage.getItem('ucil_ainun_wishes') || '[]');
+      wishes.push(newWish);
+      localStorage.setItem('ucil_ainun_wishes', JSON.stringify(wishes));
+      return true;
+    }
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          name: newWish.name,
+          status: newWish.status,
+          message: newWish.message
+        })
+      });
+      if (!response.ok) throw new Error('Network response was not ok');
+      const result = await response.json();
+      return result.result === 'success';
+    } catch (error) {
+      console.error('Gagal mengirim ke Google Sheets:', error);
+      return false;
+    }
   }
 
-  function renderWishes() {
-    const wishes = getWishes();
+  // Render wishes into the container
+  async function renderWishes() {
+    wishesListContainer.innerHTML = `
+      <div class="text-center py-4">
+        <i class="fas fa-spinner fa-spin" style="font-size: 1.8rem; color: var(--primary-color, #c5a880);"></i>
+        <p class="text-muted mt-2" style="font-size: 0.9rem;">Memuat ucapan...</p>
+      </div>
+    `;
+
+    const wishes = await getWishes();
     
     // Sort wishes: newest first
     wishes.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
@@ -343,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wishesListContainer.innerHTML = wishes.map(wish => {
       // Format timestamp elegantly
       const wishDate = new Date(wish.timestamp);
-      const timeStr = wishDate.toLocaleDateString('id-ID', {
+      const timeStr = isNaN(wishDate.getTime()) ? 'Baru saja' : wishDate.toLocaleDateString('id-ID', {
         day: 'numeric',
         month: 'short',
         year: 'numeric',
@@ -371,12 +423,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Form submission handler
   if (rsvpForm) {
-    rsvpForm.addEventListener('submit', (e) => {
+    rsvpForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const nameInput = document.getElementById('input-name');
       const statusInput = document.getElementById('input-status');
       const messageInput = document.getElementById('input-message');
+      const submitBtn = rsvpForm.querySelector('button[type="submit"]');
 
       const newWish = {
         name: nameInput.value.trim(),
@@ -387,19 +440,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!newWish.name || !newWish.status || !newWish.message) return;
 
-      const wishes = getWishes();
-      wishes.push(newWish);
-      saveWishes(wishes);
-      renderWishes();
+      // Disable button & show loading state
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
 
-      // Reset form fields
-      rsvpForm.reset();
-      
-      // Smooth scroll to wishes title
-      const wishesTitle = document.querySelector('.wishes-title');
-      if (wishesTitle) {
-        wishesTitle.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      const success = await saveWish(newWish);
+
+      if (success) {
+        rsvpForm.reset();
+        await renderWishes();
+        
+        const wishesTitle = document.querySelector('.wishes-title');
+        if (wishesTitle) {
+          wishesTitle.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      } else {
+        alert('Gagal mengirim ucapan. Silakan coba beberapa saat lagi.');
       }
+
+      // Restore button state
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
     });
   }
 
